@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="TestNG Suite">
+	<listeners>
+		<listener class-name="org.rupesh.demo.testng.AbsoluteListeners"></listener>
+	</listeners>
+	<parameter name="some" value="someValue"></parameter>
+	<test name="ONLY Regression Suite in THIS package">
+		<groups>
+			<run>
+				<include name="Regression Test"></include>
+			</run>
+		</groups>
+		<packages>
+			<package name="org.rupesh.demo.testng"></package>
+		</packages>
+	</test>
+</suite> <!-- Suite -->

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test thread-count="5" name="Default test(failed)">
+    <classes>
+      <class name="org.rupesh.demo.testng.BasicTestNG1">
+        <methods>
+          <include name="beforeTest"/>
+          <include name="afterClass"/>
+          <include name="beforeSuite"/>
+          <include name="afterSuite"/>
+          <include name="afterTest"/>
+          <include name="beforeMethod"/>
+          <include name="afterMethod"/>
+          <include name="f"/>
+          <include name="beforeClass"/>
+        </methods>
+      </class> <!-- org.rupesh.demo.testng.BasicTestNG1 -->
+      <class name="org.rupesh.demo.testng.BasicTestNG2">
+        <methods>
+          <include name="e"/>
+          <include name="c"/>
+          <include name="b"/>
+          <include name="a"/>
+          <include name="g"/>
+        </methods>
+      </class> <!-- org.rupesh.demo.testng.BasicTestNG2 -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

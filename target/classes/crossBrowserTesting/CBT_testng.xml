@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite parallel="classes" thread-count="5" name="CBT Test Suite">
+	<listeners>
+		<listener class-name="crossBrowserTesting.AbsoluteListeners"></listener>
+	</listeners>
+	<parameter name="chrome_browser" value="chrome"></parameter>
+	<parameter name="firefox_browser" value="firefox"></parameter>
+	<parameter name="ie_browser" value="ie"></parameter>
+	<test name="CBT Test">
+		<classes>
+			<class name="crossBrowserTesting.TestInChromeBrowser" />
+			<class name="crossBrowserTesting.TestInFireFoxBrowser"></class>
+			<class name="crossBrowserTesting.TestInIEBrowser"></class>
+		</classes>
+	</test> <!-- CBT Test -->
+</suite> <!-- CBT Test Suite -->

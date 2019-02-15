@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite1]">
+  <test thread-count="5" name="ONLY Regression Suite in THIS package(failed)">
+    <groups>
+      <run>
+        <include name="Regression Test"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="org.rupesh.demo.testng.BasicTestNG2">
+        <methods>
+          <include name="b"/>
+        </methods>
+      </class> <!-- org.rupesh.demo.testng.BasicTestNG2 -->
+    </classes>
+  </test> <!-- ONLY Regression Suite in THIS package(failed) -->
+  <test thread-count="5" name="BOTH Regression and Sanity Suite in THIS package(failed)">
+    <method-selectors>
+      <method-selector>
+        <script language="BeanShell">
+          <![CDATA[
+       return groups.containsKey("Regression Test") && groups.containsKey("Sanity Test");]]>
+        </script>
+      </method-selector>
+    </method-selectors>
+    <classes>
+      <class name="org.rupesh.demo.testng.BasicTestNG2">
+        <methods>
+          <include name="b"/>
+        </methods>
+      </class> <!-- org.rupesh.demo.testng.BasicTestNG2 -->
+    </classes>
+  </test> <!-- BOTH Regression and Sanity Suite in THIS package(failed) -->
+  <test thread-count="5" name="BOTH Regression and Sanity Suite in THIS class(failed)">
+    <method-selectors>
+      <method-selector>
+        <script language="BeanShell">
+          <![CDATA[return groups.containsKey("Regression Test") && groups.containsKey("Sanity Test");]]>
+        </script>
+      </method-selector>
+    </method-selectors>
+    <classes>
+      <class name="org.rupesh.demo.testng.BasicTestNG2">
+        <methods>
+          <include name="b"/>
+        </methods>
+      </class> <!-- org.rupesh.demo.testng.BasicTestNG2 -->
+    </classes>
+  </test> <!-- BOTH Regression and Sanity Suite in THIS class(failed) -->
+  <test thread-count="5" name="ALL tests in THIS package(failed)">
+    <classes>
+      <class name="org.rupesh.demo.testng.BasicTestNG2">
+        <methods>
+          <include name="e"/>
+          <include name="c"/>
+          <include name="b"/>
+          <include name="a"/>
+          <include name="g"/>
+        </methods>
+      </class> <!-- org.rupesh.demo.testng.BasicTestNG2 -->
+      <class name="org.rupesh.demo.testng.BasicTestNG1">
+        <methods>
+          <include name="beforeTest"/>
+          <include name="afterClass"/>
+          <include name="beforeSuite"/>
+          <include name="afterSuite"/>
+          <include name="afterTest"/>
+          <include name="beforeMethod"/>
+          <include name="afterMethod"/>
+          <include name="f"/>
+          <include name="beforeClass"/>
+        </methods>
+      </class> <!-- org.rupesh.demo.testng.BasicTestNG1 -->
+    </classes>
+  </test> <!-- ALL tests in THIS package(failed) -->
+</suite> <!-- Failed suite [Suite1] -->

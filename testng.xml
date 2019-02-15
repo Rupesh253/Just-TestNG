@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="TestNG Suite" annotations="Sample" verbose="1"
+	parallel="tests">
+	<listeners>
+		<listener
+			class-name="org.rupesh.demo.testng.AbsoluteListeners"></listener>
+	</listeners>
+	<test name="ONLY Regression Suite in THIS package">
+		<groups>
+			<run>
+				<include name="Regression Test"></include>
+			</run>
+		</groups>
+		<packages>
+			<package name="org.rupesh.demo.testng"></package>
+		</packages>
+	</test>
+
+	<test name="BOTH Regression and Sanity Suite in THIS package">
+		<method-selectors>
+			<method-selector>
+				<script language="beanshell"><![CDATA[
+       return groups.containsKey("Regression Test") && groups.containsKey("Sanity Test");
+     ]]></script>
+			</method-selector>
+		</method-selectors>
+		<groups>
+			<run></run>
+		</groups>
+		<packages>
+			<package name="org.rupesh.demo.testng"></package>
+		</packages>
+	</test>
+
+	<test name="BOTH Regression and Sanity Suite in THIS class">
+		<method-selectors>
+			<method-selector>
+				<script language="beanshell">
+				<![CDATA[return groups.containsKey("Regression Test") && groups.containsKey("Sanity Test");]]>
+				</script>
+			</method-selector>
+		</method-selectors>
+		<groups>
+			<run>
+			</run>
+		</groups>
+		<classes>
+			<class name="org.rupesh.demo.testng.BasicTestNG2"></class>
+		</classes>
+	</test>
+
+	<test name="ALL tests in THIS package">
+		<packages>
+			<package name="org.rupesh.demo.testng" />
+		</packages>
+	</test>
+	<test name="ALL tests in THIS class1">
+		<classes>
+			<class name="org.rupesh.demo.testng.BasicTestNG1" />
+		</classes>
+	</test>
+	<test name="ALL tests in THIS class2">
+		<classes>
+			<class name="org.rupesh.demo.testng.BasicTestNG2">
+				<methods>
+					<include name="a" />
+					<exclude name="b" />
+					<include name="c" />
+					<exclude name="d" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite> <!-- Suite -->
